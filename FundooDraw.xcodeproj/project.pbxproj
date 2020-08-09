@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84606AC124DECE7C0035EC77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AC024DECE7C0035EC77 /* AppDelegate.swift */; };
+		84606AC324DECE7C0035EC77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AC224DECE7C0035EC77 /* SceneDelegate.swift */; };
+		84606AC524DECE7C0035EC77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AC424DECE7C0035EC77 /* ViewController.swift */; };
+		84606AC824DECE7C0035EC77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84606AC624DECE7C0035EC77 /* Main.storyboard */; };
+		84606ACA24DECE830035EC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84606AC924DECE830035EC77 /* Assets.xcassets */; };
+		84606ACD24DECE830035EC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84606ACB24DECE830035EC77 /* LaunchScreen.storyboard */; };
+		84606AD824DECE830035EC77 /* FundooDrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AD724DECE830035EC77 /* FundooDrawTests.swift */; };
+		84606AE324DECE840035EC77 /* FundooDrawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AE224DECE840035EC77 /* FundooDrawUITests.swift */; };
+		84606AF224DEF3360035EC77 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AF124DEF3360035EC77 /* Canvas.swift */; };
+		84606AF824DFCD280035EC77 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AF724DFCD280035EC77 /* Line.swift */; };
+		84606AFB24DFD40B0035EC77 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84606AFA24DFD40B0035EC77 /* SettingsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84606AD424DECE830035EC77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84606AB524DECE7C0035EC77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84606ABC24DECE7C0035EC77;
+			remoteInfo = FundooDraw;
+		};
+		84606ADF24DECE840035EC77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84606AB524DECE7C0035EC77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84606ABC24DECE7C0035EC77;
+			remoteInfo = FundooDraw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84606ABD24DECE7C0035EC77 /* FundooDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundooDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84606AC024DECE7C0035EC77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84606AC224DECE7C0035EC77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84606AC424DECE7C0035EC77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84606AC724DECE7C0035EC77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84606AC924DECE830035EC77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84606ACC24DECE830035EC77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84606ACE24DECE830035EC77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84606AD324DECE830035EC77 /* FundooDrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FundooDrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84606AD724DECE830035EC77 /* FundooDrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooDrawTests.swift; sourceTree = "<group>"; };
+		84606AD924DECE830035EC77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84606ADE24DECE840035EC77 /* FundooDrawUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FundooDrawUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84606AE224DECE840035EC77 /* FundooDrawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundooDrawUITests.swift; sourceTree = "<group>"; };
+		84606AE424DECE840035EC77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84606AF124DEF3360035EC77 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		84606AF724DFCD280035EC77 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		84606AFA24DFD40B0035EC77 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84606ABA24DECE7C0035EC77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84606AD024DECE830035EC77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84606ADB24DECE830035EC77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84606AB424DECE7C0035EC77 = {
+			isa = PBXGroup;
+			children = (
+				84606ABF24DECE7C0035EC77 /* FundooDraw */,
+				84606AD624DECE830035EC77 /* FundooDrawTests */,
+				84606AE124DECE840035EC77 /* FundooDrawUITests */,
+				84606ABE24DECE7C0035EC77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84606ABE24DECE7C0035EC77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84606ABD24DECE7C0035EC77 /* FundooDraw.app */,
+				84606AD324DECE830035EC77 /* FundooDrawTests.xctest */,
+				84606ADE24DECE840035EC77 /* FundooDrawUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84606ABF24DECE7C0035EC77 /* FundooDraw */ = {
+			isa = PBXGroup;
+			children = (
+				84606AF924DFCD410035EC77 /* Model */,
+				84606AF524DEF3990035EC77 /* StoryBoards */,
+				84606AF324DEF34E0035EC77 /* Controllers */,
+				84606AF024DEF31D0035EC77 /* Views */,
+				84606AF424DEF3730035EC77 /* Supporting Files */,
+				84606AC924DECE830035EC77 /* Assets.xcassets */,
+				84606ACE24DECE830035EC77 /* Info.plist */,
+			);
+			path = FundooDraw;
+			sourceTree = "<group>";
+		};
+		84606AD624DECE830035EC77 /* FundooDrawTests */ = {
+			isa = PBXGroup;
+			children = (
+				84606AD724DECE830035EC77 /* FundooDrawTests.swift */,
+				84606AD924DECE830035EC77 /* Info.plist */,
+			);
+			path = FundooDrawTests;
+			sourceTree = "<group>";
+		};
+		84606AE124DECE840035EC77 /* FundooDrawUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84606AE224DECE840035EC77 /* FundooDrawUITests.swift */,
+				84606AE424DECE840035EC77 /* Info.plist */,
+			);
+			path = FundooDrawUITests;
+			sourceTree = "<group>";
+		};
+		84606AF024DEF31D0035EC77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84606AF124DEF3360035EC77 /* Canvas.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84606AF324DEF34E0035EC77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84606AC424DECE7C0035EC77 /* ViewController.swift */,
+				84606AFA24DFD40B0035EC77 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84606AF424DEF3730035EC77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84606AC024DECE7C0035EC77 /* AppDelegate.swift */,
+				84606AC224DECE7C0035EC77 /* SceneDelegate.swift */,
+				84606ACB24DECE830035EC77 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84606AF524DEF3990035EC77 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				84606AC624DECE7C0035EC77 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		84606AF924DFCD410035EC77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84606AF724DFCD280035EC77 /* Line.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84606ABC24DECE7C0035EC77 /* FundooDraw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84606AE724DECE840035EC77 /* Build configuration list for PBXNativeTarget "FundooDraw" */;
+			buildPhases = (
+				84606AB924DECE7C0035EC77 /* Sources */,
+				84606ABA24DECE7C0035EC77 /* Frameworks */,
+				84606ABB24DECE7C0035EC77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FundooDraw;
+			productName = FundooDraw;
+			productReference = 84606ABD24DECE7C0035EC77 /* FundooDraw.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84606AD224DECE830035EC77 /* FundooDrawTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84606AEA24DECE840035EC77 /* Build configuration list for PBXNativeTarget "FundooDrawTests" */;
+			buildPhases = (
+				84606ACF24DECE830035EC77 /* Sources */,
+				84606AD024DECE830035EC77 /* Frameworks */,
+				84606AD124DECE830035EC77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84606AD524DECE830035EC77 /* PBXTargetDependency */,
+			);
+			name = FundooDrawTests;
+			productName = FundooDrawTests;
+			productReference = 84606AD324DECE830035EC77 /* FundooDrawTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84606ADD24DECE830035EC77 /* FundooDrawUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84606AED24DECE840035EC77 /* Build configuration list for PBXNativeTarget "FundooDrawUITests" */;
+			buildPhases = (
+				84606ADA24DECE830035EC77 /* Sources */,
+				84606ADB24DECE830035EC77 /* Frameworks */,
+				84606ADC24DECE830035EC77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84606AE024DECE840035EC77 /* PBXTargetDependency */,
+			);
+			name = FundooDrawUITests;
+			productName = FundooDrawUITests;
+			productReference = 84606ADE24DECE840035EC77 /* FundooDrawUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84606AB524DECE7C0035EC77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = nikhiljain;
+				TargetAttributes = {
+					84606ABC24DECE7C0035EC77 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					84606AD224DECE830035EC77 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 84606ABC24DECE7C0035EC77;
+					};
+					84606ADD24DECE830035EC77 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 84606ABC24DECE7C0035EC77;
+					};
+				};
+			};
+			buildConfigurationList = 84606AB824DECE7C0035EC77 /* Build configuration list for PBXProject "FundooDraw" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84606AB424DECE7C0035EC77;
+			productRefGroup = 84606ABE24DECE7C0035EC77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84606ABC24DECE7C0035EC77 /* FundooDraw */,
+				84606AD224DECE830035EC77 /* FundooDrawTests */,
+				84606ADD24DECE830035EC77 /* FundooDrawUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84606ABB24DECE7C0035EC77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84606ACD24DECE830035EC77 /* LaunchScreen.storyboard in Resources */,
+				84606ACA24DECE830035EC77 /* Assets.xcassets in Resources */,
+				84606AC824DECE7C0035EC77 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84606AD124DECE830035EC77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84606ADC24DECE830035EC77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84606AB924DECE7C0035EC77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84606AC524DECE7C0035EC77 /* ViewController.swift in Sources */,
+				84606AC124DECE7C0035EC77 /* AppDelegate.swift in Sources */,
+				84606AC324DECE7C0035EC77 /* SceneDelegate.swift in Sources */,
+				84606AF224DEF3360035EC77 /* Canvas.swift in Sources */,
+				84606AF824DFCD280035EC77 /* Line.swift in Sources */,
+				84606AFB24DFD40B0035EC77 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84606ACF24DECE830035EC77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84606AD824DECE830035EC77 /* FundooDrawTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84606ADA24DECE830035EC77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84606AE324DECE840035EC77 /* FundooDrawUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84606AD524DECE830035EC77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84606ABC24DECE7C0035EC77 /* FundooDraw */;
+			targetProxy = 84606AD424DECE830035EC77 /* PBXContainerItemProxy */;
+		};
+		84606AE024DECE840035EC77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84606ABC24DECE7C0035EC77 /* FundooDraw */;
+			targetProxy = 84606ADF24DECE840035EC77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84606AC624DECE7C0035EC77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84606AC724DECE7C0035EC77 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84606ACB24DECE830035EC77 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84606ACC24DECE830035EC77 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84606AE524DECE840035EC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84606AE624DECE840035EC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84606AE824DECE840035EC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLCYAD8AZ;
+				INFOPLIST_FILE = FundooDraw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelabz.FundooDraw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84606AE924DECE840035EC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLCYAD8AZ;
+				INFOPLIST_FILE = FundooDraw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelabz.FundooDraw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84606AEB24DECE840035EC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLCYAD8AZ;
+				INFOPLIST_FILE = FundooDrawTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelabz.FundooDrawTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FundooDraw.app/FundooDraw";
+			};
+			name = Debug;
+		};
+		84606AEC24DECE840035EC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLCYAD8AZ;
+				INFOPLIST_FILE = FundooDrawTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelabz.FundooDrawTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FundooDraw.app/FundooDraw";
+			};
+			name = Release;
+		};
+		84606AEE24DECE840035EC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLCYAD8AZ;
+				INFOPLIST_FILE = FundooDrawUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelabz.FundooDrawUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FundooDraw;
+			};
+			name = Debug;
+		};
+		84606AEF24DECE840035EC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLCYAD8AZ;
+				INFOPLIST_FILE = FundooDrawUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bridgelabz.FundooDrawUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FundooDraw;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84606AB824DECE7C0035EC77 /* Build configuration list for PBXProject "FundooDraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84606AE524DECE840035EC77 /* Debug */,
+				84606AE624DECE840035EC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84606AE724DECE840035EC77 /* Build configuration list for PBXNativeTarget "FundooDraw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84606AE824DECE840035EC77 /* Debug */,
+				84606AE924DECE840035EC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84606AEA24DECE840035EC77 /* Build configuration list for PBXNativeTarget "FundooDrawTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84606AEB24DECE840035EC77 /* Debug */,
+				84606AEC24DECE840035EC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84606AED24DECE840035EC77 /* Build configuration list for PBXNativeTarget "FundooDrawUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84606AEE24DECE840035EC77 /* Debug */,
+				84606AEF24DECE840035EC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84606AB524DECE7C0035EC77 /* Project object */;
+}
