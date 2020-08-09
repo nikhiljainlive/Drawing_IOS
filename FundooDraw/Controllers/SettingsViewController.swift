@@ -10,9 +10,39 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     var color : CGColor = UIColor.black.cgColor
-    var lineWidth : CGFloat = 1
+    var lineWidth : CGFloat = 1 {
+        didSet {
+            lineWidthValueLabel.text = String(format: "%\(0.1)f", lineWidth)
+            onLineWidthChange?(lineWidth)
+        }
+    }
+    
     var onColorChange : ((CGColor) -> Void)?
     var onLineWidthChange : ((CGFloat) -> Void)?
+    
+    private var redColorValue : Int = 0 {
+        didSet {
+            redColorValueLabel.text = redColorValue.description
+        }
+    }
+    
+    private var greenColorValue : Int = 0 {
+        didSet {
+            greenColorValueLabel.text = greenColorValue.description
+        }
+    }
+    
+    private var blueColorValue : Int = 0 {
+        didSet {
+            blueColorValueLabel.text = blueColorValue.description
+        }
+    }
+    
+    private var alphaValue : CGFloat = 0 {
+        didSet {
+            opacityValueLabel.text = String(format: "%\(0.1)f", alphaValue)
+        }
+    }
     
     private let closeButton : UIButton = {
         let button = UIButton(type: .close)
@@ -20,7 +50,7 @@ class SettingsViewController: UIViewController {
         return button
     }()
     
-    private let redColorSelector : UISlider = {
+    private let redColorSlider : UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 255
@@ -28,7 +58,7 @@ class SettingsViewController: UIViewController {
         return slider
     }()
     
-    private let greenColorSelector : UISlider = {
+    private let greenColorSlider : UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 255
@@ -36,7 +66,7 @@ class SettingsViewController: UIViewController {
         return slider
     }()
     
-    private let blueColorSelector : UISlider = {
+    private let blueColorSlider : UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 255
@@ -44,7 +74,7 @@ class SettingsViewController: UIViewController {
         return slider
     }()
     
-    private let opacitySelector : UISlider = {
+    private let opacitySlider : UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 1
@@ -52,7 +82,7 @@ class SettingsViewController: UIViewController {
         return slider
     }()
     
-    private let lineWidthSelector : UISlider = {
+    private let lineWidthSlider : UISlider = {
         let slider = UISlider()
         slider.minimumValue = 1
         slider.maximumValue = 20
@@ -60,25 +90,77 @@ class SettingsViewController: UIViewController {
         return slider
     }()
     
+    private lazy var redColorValueLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        return label
+    }()
+    
+    private lazy var greenColorValueLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .green
+        return label
+    }()
+    
+    private lazy var blueColorValueLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .blue
+        return label
+    }()
+    
+    private lazy var opacityValueLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var lineWidthValueLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var colorStackView = UIStackView(arrangedSubviews: [
+        stackView(for: redColorSlider, with: "Red", valueLabel: redColorValueLabel),
+        stackView(for: greenColorSlider, with: "Green", valueLabel: greenColorValueLabel),
+        stackView(for: blueColorSlider, with: "Blue", valueLabel: blueColorValueLabel),
+        stackView(for: opacitySlider, with: "Opacity", valueLabel: opacityValueLabel),
+        stackView(for: lineWidthSlider, with: "Line Width", valueLabel: lineWidthValueLabel)
+    ])
+    
+    private let previewView : UIView = {
+        let view = UIView()
+        return view
+     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpLayout()
-        setUpSliderValues()
+        setUpLayoutValues()
     }
     
     private func setUpLayout() {
         view.backgroundColor = UIColor.white
         setUpColorStackView()
+        setUpColorPreview()
         setUpCloseButton()
     }
     
-    private func setUpSliderValues() {
-        redColorSelector.value = Float(CIColor(cgColor: color).red) * 255.0
-        greenColorSelector.value = Float(CIColor(cgColor: color).green) * 255.0
-        blueColorSelector.value = Float(CIColor(cgColor: color).blue) * 255.0
-        opacitySelector.value = Float(CIColor(cgColor: color).alpha)
-        lineWidthSelector.value = Float(lineWidth)
+    private func setUpLayoutValues() {
+        redColorValue = Int(CIColor(cgColor: color).red * 255)
+        greenColorValue = Int(CIColor(cgColor: color).green * 255)
+        blueColorValue = Int(CIColor(cgColor: color).blue * 255)
+        alphaValue = CIColor(cgColor: color).alpha
+        
+        redColorSlider.value = Float(redColorValue)
+        greenColorSlider.value = Float(greenColorValue)
+        blueColorSlider.value = Float(blueColorValue)
+        opacitySlider.value = Float(alphaValue)
+        
+        lineWidthSlider.value = Float(lineWidth)
+        
+        previewView.backgroundColor = UIColor(cgColor: color)
     }
     
     private func setUpCloseButton() {
@@ -88,23 +170,16 @@ class SettingsViewController: UIViewController {
         closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
     }
     
-    private func stackView(for slider : UISlider, with text : String) -> UIStackView {
+    private func stackView(for slider : UISlider, with text : String, valueLabel : UILabel) -> UIStackView {
         let label = UILabel()
         label.text = text
         
-        let sliderStackView = UIStackView(arrangedSubviews: [label, slider])
+        let sliderStackView = UIStackView(arrangedSubviews: [label, slider, valueLabel])
         sliderStackView.spacing = 10
         return sliderStackView
     }
     
     private func setUpColorStackView() {
-        let colorStackView = UIStackView(arrangedSubviews: [
-            stackView(for: redColorSelector, with: "Red"),
-            stackView(for: greenColorSelector, with: "Green"),
-            stackView(for: blueColorSelector, with: "Blue"),
-            stackView(for: opacitySelector, with: "Opacity"),
-            stackView(for: lineWidthSelector, with: "Line Width")
-        ])
         colorStackView.distribution = .equalCentering
         colorStackView.axis = .vertical
         self.view.addSubview(colorStackView)
@@ -115,20 +190,46 @@ class SettingsViewController: UIViewController {
         colorStackView.centerYAnchor.constraint(equalToSystemSpacingBelow: view.centerYAnchor, multiplier: 1).isActive = true
     }
     
+    private func setUpColorPreview() {
+        let previewLabel = UILabel()
+        previewLabel.text = "Color Preview"
+        previewView.layer.cornerRadius = 25
+        previewView.translatesAutoresizingMaskIntoConstraints = false
+        previewView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        previewView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        let stackView = UIStackView(arrangedSubviews: [
+            previewLabel, previewView
+        ])
+        stackView.spacing = 20
+        self.view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: colorStackView.bottomAnchor, constant: 20).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
     @objc private func dismissViewController() {
         dismiss(animated: true)
     }
     
     @objc private func colorValueDidChange() {
-        let redColorValue = CGFloat(redColorSelector.value) / 255.0
-        let greenColorValue = CGFloat(greenColorSelector.value) / 255.0
-        let blueColorValue = CGFloat(blueColorSelector.value) / 255.0
-        let alphaColorValue = CGFloat(opacitySelector.value)
+        redColorValue = Int(redColorSlider.value)
+        greenColorValue = Int(greenColorSlider.value)
+        blueColorValue = Int(blueColorSlider.value)
+        alphaValue = CGFloat(opacitySlider.value)
         
-        onColorChange?(UIColor.init(red: redColorValue, green: greenColorValue, blue: blueColorValue, alpha: alphaColorValue).cgColor)
+        let changedColor = UIColor(red: CGFloat(redColorSlider.value) / 255.0, green: CGFloat(greenColorSlider.value) / 255.0, blue: CGFloat(blueColorSlider.value) / 255.0, alpha: alphaValue)
+        onColorChange?(changedColor.cgColor)
+        previewView.backgroundColor = changedColor
     }
     
     @objc private func lineWidthDidChange() {
-        onLineWidthChange?(CGFloat(lineWidthSelector.value))
+        lineWidth = CGFloat(lineWidthSlider.value)
+    }
+}
+
+extension Int {
+    func format(f: String) -> String {
+        return String(format: "%\(f)d", self)
     }
 }

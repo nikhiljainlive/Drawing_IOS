@@ -12,6 +12,7 @@ class Canvas : UIView {
     private var lines = [Line]()
     private var strokeColor : CGColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1).cgColor
     private var lineWidth : CGFloat = 1
+    private var isContinuousLine = false
     
     override init(frame: CGRect) {
         super.init(frame : frame)
@@ -36,6 +37,7 @@ class Canvas : UIView {
         lines.forEach { (line) in
             context.setStrokeColor(line.color)
             context.setLineWidth(line.width)
+            context.setBlendMode(.normal)
             for (index, point) in line.points.enumerated() {
                 if index == 0 {
                     context.move(to: point)
@@ -48,16 +50,29 @@ class Canvas : UIView {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lines.append(Line(color: strokeColor, width: lineWidth))
+        isContinuousLine = false
+        guard let point = touches.first?.location(in: nil) else { return }
+        lines.append(Line(points : [point], color: strokeColor, width: lineWidth))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isContinuousLine = true
         guard let point = touches.first?.location(in: nil) else { return }
         
         guard var lastLine = lines.popLast() else { return }
         lastLine.add(point : point)
         lines.append(lastLine)
         setNeedsDisplay()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !isContinuousLine {
+            guard let point = touches.first?.location(in: nil) else { return }
+            guard var lastLine = lines.popLast() else { return }
+            lastLine.add(point : point)
+            lines.append(lastLine)
+            setNeedsDisplay()
+        }
     }
     
     func setStrokeColor(color : CGColor) {
