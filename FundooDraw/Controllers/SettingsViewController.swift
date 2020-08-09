@@ -131,13 +131,15 @@ class SettingsViewController: UIViewController {
     private let previewView : UIView = {
         let view = UIView()
         return view
-     }()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpLayout()
-        setUpLayoutValues()
+        setUpVariablesFromColor()
+        setUpSliderValues()
+        previewView.backgroundColor = UIColor(cgColor: color)
     }
     
     private func setUpLayout() {
@@ -147,20 +149,20 @@ class SettingsViewController: UIViewController {
         setUpCloseButton()
     }
     
-    private func setUpLayoutValues() {
+    private func setUpVariablesFromColor() {
         redColorValue = Int(CIColor(cgColor: color).red * 255)
         greenColorValue = Int(CIColor(cgColor: color).green * 255)
         blueColorValue = Int(CIColor(cgColor: color).blue * 255)
         alphaValue = CIColor(cgColor: color).alpha
-        
+    }
+    
+    private func setUpSliderValues(){
         redColorSlider.value = Float(redColorValue)
         greenColorSlider.value = Float(greenColorValue)
         blueColorSlider.value = Float(blueColorValue)
         opacitySlider.value = Float(alphaValue)
         
         lineWidthSlider.value = Float(lineWidth)
-        
-        previewView.backgroundColor = UIColor(cgColor: color)
     }
     
     private func setUpCloseButton() {
@@ -225,11 +227,5 @@ class SettingsViewController: UIViewController {
     
     @objc private func lineWidthDidChange() {
         lineWidth = CGFloat(lineWidthSlider.value)
-    }
-}
-
-extension Int {
-    func format(f: String) -> String {
-        return String(format: "%\(f)d", self)
     }
 }
