@@ -54,14 +54,12 @@ class ViewController: UIViewController {
         return button
     }()
     
-    override func loadView() {
-        self.view = canvas
-        canvas.setStrokeColor(color : lineColor)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        self.view.addSubview(canvas)
+        canvas.frame = self.view.frame
+        canvas.setStrokeColor(color : lineColor)
         setUpLayout()
     }
     
